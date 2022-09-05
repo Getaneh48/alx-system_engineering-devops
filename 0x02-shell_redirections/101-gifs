@@ -1,0 +1,2 @@
+#!/bin/bash
+find . -type f -iname '*.gif' -exec bash -c 'printf "%s\n" "${@%.*}"' _ {} + | sort -n | cut -b 3-
