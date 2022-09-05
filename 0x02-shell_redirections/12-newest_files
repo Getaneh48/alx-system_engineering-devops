@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -maxdepth 1 -type f | cut -d \/ -f 2 | sort -nr | head
+ls -lt | head -n 11 | tail -n +2
