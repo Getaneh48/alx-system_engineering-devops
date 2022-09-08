@@ -1,0 +1,2 @@
+#!/bin/bash
+gcc -c -o "$(printenv CFILE | grep -o main)".o $CFILE
