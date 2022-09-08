@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -o "$(echo $CFILE | cut -d '.' -f1)" $CFILE
+gcc -o cisfun $CFILE
