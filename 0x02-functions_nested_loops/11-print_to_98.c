@@ -19,7 +19,7 @@ void print_to_98(int n)
 		for (i = n; i <= max; i++)
 		{
 			if (i < max)
-				printf("%d ", i);
+				printf("%d, ", i);
 			else
 				printf("%d", i);
 		}
@@ -28,7 +28,7 @@ void print_to_98(int n)
 	{
 		for (j = n; j >= max; j--)
 		{
-			if (j < max)
+			if (j > max)
 				printf("%d, ", j);
 			else
 				printf("%d", j);
