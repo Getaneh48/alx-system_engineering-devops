@@ -12,7 +12,7 @@ void print_to_98(int n)
 	max = 98;
 	if (n == max)
 	{
-		printf("%d\n", n);
+		printf("%d", n);
 	}
 	else if (n < max)
 	{
