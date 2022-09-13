@@ -1,19 +1,20 @@
 #include "main.h"
 /**
-* main - prints 10 times the alphabet, in lowercase.
+* _islower - check if a character is lowercase.
+* @c: int value of a character
 *
-* Return: Always 0
+* Description: check if a character is lowercase.
+*
+* param: c
+*
+* Return: 1 if it is lower and 0 if it is capital.
 */
-int main(void)
+int _islower(int c)
 {
-	int r;
+	if (c >= 65 && c <= 91)
+		return (0);
+	else if (c >= 97 && c <= 122)
+		return (1);
 
-	r = _islower('H');
-	_putchar(r + '0');
-	r = _islower('o');
-	_putchar(r + '0');
-	r = _islower(108);
-	_putchar(r + '0');
-	_putchar('\n');
 	return (0);
 }
