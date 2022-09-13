@@ -18,7 +18,7 @@ void print_to_98(int n)
 	{
 		for (i = n; i <= max; i++)
 		{
-			if (j < max)
+			if (i < max)
 				printf("%d ", i);
 			else
 				printf("%d", i);
