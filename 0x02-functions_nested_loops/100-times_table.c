@@ -6,11 +6,10 @@
 */
 void print_times_table(int n)
 {
-	int i, j, times, rem, div;
+	int i, j, times;
 
 	if (n >= 0 && n <= 15)
 	{
-		div = 0;
 		for (i = 0; i <= n; i++)
 		{
 			for (j = 0; j <= n; j++)
@@ -30,10 +29,7 @@ void print_times_table(int n)
 				{
 					_putchar(' ');
 					_putchar(' ');
-					div = times / 10;
-					rem = times % 10;
-					_putchar(div + 48);
-					_putchar(rem + 48);
+					getNumbersOfDigit(times);
 				}
 				else
 				{
@@ -60,7 +56,10 @@ void getNumbersOfDigit(int num)
 	int div, rem, buf[5], aindex, m;
 
 	aindex = 0;
-
+	if (num >= 100)
+	{
+		_putchar(' ');
+	}
 	do {
 		div = num / 10;
 		rem = num % 10;
@@ -69,7 +68,6 @@ void getNumbersOfDigit(int num)
 		aindex += 1;
 	} while (div >= 10);
 	buf[aindex] = div;
-	_putchar(' ');
 	for (m = aindex; m >= 0; m--)
 	{
 		_putchar(buf[m] + 48);
