@@ -3,7 +3,7 @@
 /**
 * main - print sum
 *
-* Return:  int 
+* Return: int
 */
 int main(void)
 {
@@ -16,7 +16,7 @@ int main(void)
 * print_natural_sum - print sum
 *
 */
-void print_natural_sum()
+void print_natural_sum(void)
 {
 	int sum, n, index, x1m, x2m,  max,  x1, x2;
 
@@ -26,15 +26,14 @@ void print_natural_sum()
 	n = 1;
 	index = 1;
 	sum = 0;
-	max = 9;
+	max = 16;
 
-	while (n)
+	while (n > 0)
 	{
-		x1m = ((x1 * index) >= max) ? 0 : (x1 * index);
-		x2m = ((x2 * index) >= max) ? 0 : (x2 * index);
+		x1m = (x1 * index > max) ? 0 : (x1 * index);
+		x2m = ((x2 * index) > max) ? 0 : (x2 * index);
 		sum += (x1m + x2m);
-		printf("%d - %d\n", x1m, x2m);
-		if (x1m >= max && x2m >= max)
+		if (x1m == 0 && x2m == 0)
 		{
 			n = 0;
 		}
