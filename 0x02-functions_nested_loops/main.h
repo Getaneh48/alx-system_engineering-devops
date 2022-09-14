@@ -15,3 +15,4 @@ void getNumbersOfDigit(int num);
 void print_natural_sum(void);
 void print_fibonacci(void);
 void print_sumeven_fibonacci(void);
+void print_first98_fibonacci(void);
