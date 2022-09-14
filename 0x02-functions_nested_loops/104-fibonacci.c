@@ -18,28 +18,33 @@ int main(void)
 */
 void print_first98_fibonacci(void)
 {
-	int x1, x2, i, max, sum;
+	int i, max;
+	union u_x1 {
+		long int x;
+	} ux1,ux2,sum;
 
-	x1 = 1;
-	x2 = 2;
+	ux1.x = 1;
+        ux2.x = 2;
+	sum.x = 0;
+
 	i = 1;
-	sum = 0;
 	max = 98;
 
-	printf("%d, ", x1);
-	printf("%d, ", x2);
+	printf("%ld, ", ux1.x);
+	printf("%ld, ", ux2.x);
 	while (i <= max)
 	{
-		sum = x1 + x2;
-		x1 = x2;
-		x2 = sum;
+		sum.x = ux1.x + ux2.x;
+
+		ux1.x = ux2.x;
+		ux2.x = sum.x;
 		if (i < max)
 		{
-			printf("%d, ", sum);
+			printf("%ld, ", sum.x);
 		}
 		else
 		{
-			printf("%d", sum);
+			printf("%ld", sum.x);
 		}
 		i++;
 	}
