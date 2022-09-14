@@ -18,25 +18,25 @@ int main(void)
 */
 void print_fibonacci(void)
 {
-	int x1, x2, sum, i, max;
+	long int x1, x2, sum, i, max;
 
 	x1 = 1;
 	x2 = 2;
 	i = 1;
 	sum = 0;
-	max = 10;
+	max = 50;
 
-	printf("%d, ", x1);
-	printf("%d, ", x2);
+	printf("%ld, ", x1);
+	printf("%ld, ", x2);
 	while (i <= max - 2)
 	{
 		sum = x1 + x2;
 		x1 = x2;
 		x2 = sum;
-		if (i < max -2)
-			printf("%d, ", sum);
+		if (i < max - 2)
+			printf("%ld, ", sum);
 		else
-			printf("%d", sum);
+			printf("%ld", sum);
 		i++;
 	}
 	printf("\n");
