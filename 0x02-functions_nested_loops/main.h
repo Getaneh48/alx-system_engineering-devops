@@ -14,3 +14,4 @@ void print_times_table(int n);
 void getNumbersOfDigit(int num);
 void print_natural_sum(void);
 void print_fibonacci(void);
+void print_sumeven_fibonacci(void);
