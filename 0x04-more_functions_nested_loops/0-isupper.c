@@ -10,7 +10,8 @@ int _isupper(int c)
 	int _isupp;
 
 	_isupp = 0;
-	if (c >= 65 && c <= 91)
+
+	if (c >= 65 && c <= 90)
 	{
 		_isupp = 1;
 	}
