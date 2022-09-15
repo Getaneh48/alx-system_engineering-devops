@@ -15,5 +15,6 @@ void print_square(int size);
 void fizzbuzz(void);
 void print_diagonal(int n);
 void print_triangle(int size);
+void print_char(int c);
 
 #endif /* MAIN_H */

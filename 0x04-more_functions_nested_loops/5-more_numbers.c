@@ -21,11 +21,24 @@ void more_numbers(void)
 			}
 			else
 			{
-				_putchar(div + 48);
-				_putchar(rem + 48);
+				print_char(div);
+				print_char(rem);
 			}
 
 		}
 		_putchar('\n');
 	}
 }
+
+/**
+* print_char - prints a character on stdout
+*
+* @c: first integer argument
+*/
+
+void print_char(int c)
+{
+	_putchar(c + 48);
+}
+
+
