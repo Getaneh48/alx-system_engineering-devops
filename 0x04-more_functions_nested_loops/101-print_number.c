@@ -72,7 +72,6 @@ void display_number(int rev_digit, int sign, int org_dig_len, int rev_dig_len)
 		{
 			_putchar(48);
 		}
-		_putchar('\n');
 	}
 }
 
