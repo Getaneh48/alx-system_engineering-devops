@@ -16,15 +16,24 @@ void print_number(int n)
 	if (n < 0)
 	{
 		sign = 45;/* save sign of a number. 45 to min -ve */
-		n = n * -1;
 	}
 
-	if (n == 0)
+	if (n > -10 && n < 10)
 	{
-		_putchar(48);
+		if (n < 0)
+		{
+			_putchar(sign);
+		 	n = n * -1;
+		}
+		
+		_putchar(n + 48);
 	}
 	else
 	{
+		if (n < 0)
+		{			
+			n = n * -1;
+		}
 
 		orgdigit_length = get_digit_length(n);
 
