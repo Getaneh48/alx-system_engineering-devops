@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* puts2 -  prints half of a string, followed by a new line.
+* puts_half -  prints half of a string, followed by a new line.
 * with the first character, followed by a new line.
 *
 * @str: first argument, character pointer
@@ -30,7 +30,7 @@ void puts_half(char *str)
 		_putchar(*str);
 		str += 1;
 	}
-	_putchar(13);
+	_putchar('\n');
 
 }
 
