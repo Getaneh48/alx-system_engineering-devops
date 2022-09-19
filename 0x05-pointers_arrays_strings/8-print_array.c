@@ -14,7 +14,7 @@ void print_array(int *a, int n)
 	int i, len;
 
 	i = 0;
-	len = sizeof(a);
+	len = _arrlen(a);
 
 	if (n > 0 && n < len)
 	{
@@ -31,4 +31,25 @@ void print_array(int *a, int n)
 		}
 	}
 	printf("\n");
+}
+/**
+* _arrlen - counts the elements of an array.
+*
+* @num: integer array pointer
+*
+* Return: the length of an integer array
+*
+*/
+int _arrlen(int *num)
+{
+	int len;
+
+	len = 0;
+	while (*num)
+	{
+		len += 1;
+		num += 1;
+	}
+
+	return (len);
 }
