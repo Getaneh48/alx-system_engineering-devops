@@ -21,7 +21,7 @@ void puts_half(char *str)
 	}
 	else
 	{
-		div = (len - 1) / 2;
+		div = (len - 1) / 2 + 1;
 		str = str + div;
 	}
 
@@ -30,6 +30,7 @@ void puts_half(char *str)
 		_putchar(*str);
 		str += 1;
 	}
+	_putchar(13);
 
 }
 
