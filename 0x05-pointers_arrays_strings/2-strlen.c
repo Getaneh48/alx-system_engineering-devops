@@ -16,7 +16,7 @@ int _strlen(char *s)
 	while (*s != '\0')
 	{
 		len += 1;
-		s++;
+		++s;
 	}
 
 	return (len);
