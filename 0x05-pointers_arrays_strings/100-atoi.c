@@ -49,7 +49,6 @@ int _atoi(char *s)
 	result = pad_zero(result, array_element - 1);
 	if (isngv)
 		result = result * -1;
-
 	return (result);
 }
 
