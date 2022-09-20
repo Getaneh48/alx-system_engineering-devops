@@ -16,3 +16,4 @@ int convert_to_number(int *numbers, int length, int isNgv);
 int power(int base, int exp);
 int reverse_number(int n);
 int number_length(int n);
+int pad_zero(int n, int len);

@@ -45,10 +45,38 @@ int _atoi(char *s)
 		s = s + 1;
 	}
 	result = reverse_number(result);
+	result = pad_zero(result, array_element - 1);
 	if (isngv)
 		result = result * -1;
 
 	return (result);
+}
+
+/**
+* pad_zero - if a number < 10 add zeros infront of it according
+* to its length.
+*
+* @n: the number to be padded with zero.
+* @len: the length of the number.
+*
+* Return: the padded number
+*
+*/
+
+int pad_zero(int n, int len)
+{
+	int number;
+
+	if (n < 10)
+	{
+		number = n * power(10, len);
+	}
+	else
+	{
+		number = n;
+	}
+
+	return (number);
 }
 
 /**
@@ -66,16 +94,22 @@ int reverse_number(int n)
 
 	nlen = number_length(n);
 	result = 0;
+	if (n > 10)
+	{
+		do {
+			div = n / 10;
+			rem = n % 10;
+			n = div;
+			result = result + rem * power(10, nlen - 1);
+			nlen--;
+		} while (div >= 10);
 
-	do {
-		div = n / 10;
-		rem = n % 10;
-		n = div;
-		result = result + rem * power(10, nlen - 1);
-		nlen--;
-	} while (div >= 10);
-
-	result += div;
+		result += div;
+	}
+	else
+	{
+		result = n;
+	}
 
 	return (result);
 }
