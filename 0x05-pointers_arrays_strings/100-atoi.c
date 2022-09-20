@@ -13,6 +13,7 @@ int _atoi(char *s)
 	int num, prev_char, array_element, index, result, isngv;
 
 	array_element = isngv = index = 0;
+	result = 0;
 	while (*s)
 	{
 		num = (int)(*s);
