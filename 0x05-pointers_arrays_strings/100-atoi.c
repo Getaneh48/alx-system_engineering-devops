@@ -10,9 +10,9 @@
 */
 int _atoi(char *s)
 {
-	int num, arr[10], prev_char, array_element, j, index, result, isngv;
+	int num, prev_char, array_element, index, result, isngv;
 
-	array_element = j = isngv = index = 0;
+	array_element = isngv = index = 0;
 	while (*s)
 	{
 		num = (int)(*s);
@@ -24,12 +24,9 @@ int _atoi(char *s)
 				{
 					prev_char = (int)(*(s - 1));
 					if (prev_char == 45)
-					{
 						isngv = 1;
-					}
 				}
-
-				arr[array_element] = num - 48;
+				result = result + (num - 48) * power(10, array_element);
 				array_element++;
 			}
 			else
@@ -37,7 +34,7 @@ int _atoi(char *s)
 				prev_char = (int) (*(s - 1));
 				if (prev_char >= 48 && prev_char <= 57)
 				{
-					arr[array_element] = num - 48;
+					result = result + (num - 48) * power(10, array_element);
 					array_element++;
 				}
 				else
@@ -47,40 +44,63 @@ int _atoi(char *s)
 		index += 1;
 		s = s + 1;
 	}
-	result = convert_to_number(arr, array_element, isngv);
+	result = reverse_number(result);
+	if (isngv)
+		result = result * -1;
+
 	return (result);
 }
 
 /**
-* convert_to_number - converts array of numbers into an integer value
+* reverse_number - reverses a number
 *
-* @numbers: array of integers.
-* @length: length of the array.
-* @isNgv: 0 positive 1 negative number
+* @n: number to be reversed
 *
-* Return: an integer reprsentation of the array
+* Return: the reversed number
 *
 */
 
-int convert_to_number(int *numbers, int length, int isNgv)
+int reverse_number(int n)
 {
-	int i, sum;
+	int rem, div, nlen, result;
 
-	i = length - 1;
-	sum = 0;
+	nlen = number_length(n);
+	result = 0;
 
-	while (i >= 0)
-	{
-		sum = sum + numbers[(length - 1) - i] * power(10, i);
-		i--;
-	}
+	do {
+		div = n / 10;
+		rem = n % 10;
+		n = div;
+		result = result + rem * power(10, nlen - 1);
+		nlen--;
+	} while (div >= 10);
 
-	if (isNgv)
-	{
-		sum = sum * -1;
-	}
+	result += div;
 
-	return (sum);
+	return (result);
+}
+
+/**
+* number_length - get the length of a number
+*
+* @n: the number the length to be checked
+*
+* Return: the length of the number
+*
+*/
+
+int number_length(int n)
+{
+	int div, c;
+
+	c = 1;
+	do {
+		div = n / 10;
+		n = div;
+		c++;
+	} while (div >= 10);
+
+	return (c);
 }
 
 /**
