@@ -10,7 +10,8 @@
 * Return: the copied string.
 *
 */
-char *_strncpy(char *dest, char *src, int n){
+char *_strncpy(char *dest, char *src, int n)
+{
 	int i;
 	char *dest_holder = dest;
 
@@ -18,7 +19,7 @@ char *_strncpy(char *dest, char *src, int n){
 	while (*src != '\0')
 	{
 		if (i < n)
-		{			
+		{
 			*dest = *src;
 			src += 1;
 			dest += 1;
