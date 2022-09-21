@@ -1,4 +1,7 @@
 #include <stdio.h>
+char *_strncat(char *dest, char *src, int n);
+int _strlen(char *str);
+char *_strcat(char *dest, char *src);
 int _putchar(char c);
 char *cap_string(char *);
 int _inarray(int *arr, int len, int n);
