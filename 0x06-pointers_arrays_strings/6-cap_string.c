@@ -13,7 +13,7 @@ char *cap_string(char *s)
 {
 	int c, i;
 	int separators[] = {8, 9, 10, 12, 13, 32, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
-	const int SIZE = 13;
+	const int SIZE = 16;
 	char *ns = s;
 
 	c = i = 0;
