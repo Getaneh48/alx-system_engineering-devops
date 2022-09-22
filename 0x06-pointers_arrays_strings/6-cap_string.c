@@ -44,6 +44,15 @@ char *cap_string(char *s)
 		i++;
 	}
 
+	if (i == 1)
+	{
+		c = (int) *(s - 1);
+		if (c >= 97 && c <= 122)
+		{
+			c = c - 32;
+			*(s - 1) = (char) c;
+		}
+	}
 
 	return (ns);
 }
