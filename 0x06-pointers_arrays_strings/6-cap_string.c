@@ -27,6 +27,10 @@ char *cap_string(char *s)
 			{
 				if (_inarray(separators, SIZE, (int) *(s - 1)))
 				{
+					if ((int) *(s - 1) == 9)
+					{
+						*(s - 1) = (char) 32;
+					}
 					c = c - 32;
 					*s = (char) c;
 				}
