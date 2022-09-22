@@ -11,9 +11,9 @@
 
 char *string_toupper(char *s)
 {
-	int c;	
+	int c;
 	char *sn;
-        
+
 	sn = s;
 	c = 0;
 	while (*s != '\0')
