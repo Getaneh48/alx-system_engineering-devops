@@ -17,7 +17,6 @@ char *cap_string(char *s)
 	char *ns = s;
 
 	c = i = 0;
-
 	while (*s != '\0')
 	{
 		c = (int) *s;
@@ -33,11 +32,8 @@ char *cap_string(char *s)
 			}
 			else
 			{
-				if (_inarray(separators, SIZE, (int) *s))
-				{
-					c = c - 32;
-					*s = (char) c;
-				}
+				c = c - 32;
+				*s = (char) c;
 			}
 		}
 		s += 1;
