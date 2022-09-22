@@ -14,7 +14,6 @@
 char *_strncat(char *dest, char *src, int n)
 {
 	char *org_dest = dest;
-	char *org_src = src;
 	int i;
 
 	i = 0;
@@ -55,7 +54,7 @@ int _strlen(char *str)
 {
 	int i = 0;
 
-	whilev(*str != '\0')
+	while(*str != '\0')
 	{
 		i++;
 		str += 1;
