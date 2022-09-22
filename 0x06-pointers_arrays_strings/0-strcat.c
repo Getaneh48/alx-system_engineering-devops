@@ -13,7 +13,6 @@
 char *_strcat(char *dest, char *src)
 {
 	char *org_dest = dest;
-	char *org_src = src;
 
 	dest = dest + _strlen(dest);
 
