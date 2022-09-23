@@ -12,3 +12,4 @@ char *_strncpy(char *dest, char *src, int n);
 char *leet(char *);
 int str_indexOf(char c, char *enc_lettr);
 char *rot13(char *);
+void aschii_tr_table(int *, int, int, int);
