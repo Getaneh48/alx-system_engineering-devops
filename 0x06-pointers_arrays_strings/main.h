@@ -13,3 +13,8 @@ char *leet(char *);
 int str_indexOf(char c, char *enc_lettr);
 char *rot13(char *);
 void aschii_tr_table(int *, int, int, int);
+void print_number(int n);
+void display_number(int rev_digit, int sign, int org_dig_len, int rev_dig_len);
+int reverse_number(int digit, int length);
+int get_digit_length(int digit);
+int power(int base, int exp);
