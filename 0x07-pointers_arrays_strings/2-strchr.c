@@ -19,7 +19,7 @@ char *_strchr(char *s, char c)
 	{
 		if (c == *s)
 		{
-			s_char = s;
+			s_char = s + 1;
 			break;
 		}
 		s = s + 1;
