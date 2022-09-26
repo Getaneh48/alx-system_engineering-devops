@@ -13,7 +13,6 @@
 
 char *_strpbrk(char *s, char *accept)
 {
-	int match_found = 0;
 	char *o_accept = accept;
 
 	while (*s != '\0')
@@ -23,16 +22,13 @@ char *_strpbrk(char *s, char *accept)
 		{
 			if (*s == *accept)
 			{
-				match_found = 1;
-				break;
+				return (s);
 			}
 			accept++;
 		}
 
-		if (match_found)
-			break;
 		s++;
 	}
 
-	return (s);
+	return ('\0');
 }
