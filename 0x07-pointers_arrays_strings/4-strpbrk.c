@@ -14,9 +14,11 @@
 char *_strpbrk(char *s, char *accept)
 {
 	int match_found = 0;
+	char *o_accept = accept;
 
 	while (*s != '\0')
 	{
+		accept = o_accept;
 		while (*accept != '\0')
 		{
 			if (*s == *accept)
@@ -32,5 +34,5 @@ char *_strpbrk(char *s, char *accept)
 		s++;
 	}
 
-	return (accept);
+	return (s);
 }
