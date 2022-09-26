@@ -13,14 +13,18 @@
 
 char *_strchr(char *s, char c)
 {
+	int i;
+
+	i = 0;
 	while (*s != '\0')
 	{
 		if (c == *s)
 		{
-			return (s);
+			return(s);
 		}
-		s = s + 1;
+		i++;
+		s = s + i;
 	}
 
-	return ('\0');
+	return (s);
 }
