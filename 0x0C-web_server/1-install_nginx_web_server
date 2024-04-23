@@ -4,12 +4,12 @@ PACKAGE="nginx"
 
 sudo apt update -y
 if dpkg-query -l "$PACKAGE" > /dev/null 2>&1; then
-	echo "$PACKAGE - has already been installed"
+        echo "$PACKAGE - has already been installed"
 else
-	apt install "$PACKAGE" -y
-	service nginx restart
-	if [[ -d "/var/www/html" ]]; then
-		chown -R "$USER":"$USER" /var/www/html
-		echo "Hello World!">/var/www/html/index.html
-	fi
+        apt install "$PACKAGE" -y
+        service nginx restart
+        if [[ -d "/var/www/html" ]]; then
+                chown -R "$USER":"$USER" /var/www/html
+                echo "Hello World!">/var/www/html/index.html
+        fi
 fi
