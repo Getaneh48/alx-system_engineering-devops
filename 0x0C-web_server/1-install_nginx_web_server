@@ -2,15 +2,14 @@
 # a Bash script that configures a new Ubuntu machine and install nginx web server
 PACKAGE="nginx"
 
-sudo apt update
+sudo apt update -y
 if dpkg-query -l "$PACKAGE" > /dev/null 2>&1; then
 	echo "$PACKAGE - has already been installed"
 else
 	apt install "$PACKAGE" -y
 	service nginx restart
 	if [[ -d "/var/www/html" ]]; then
-		echo "modifying index file"
 		chown -R "$USER":"$USER" /var/www/html
-		echo "Hello World!">/var/www/html/index.nginx-debian.html
+		echo "Hello World!">/var/www/html/index.html
 	fi
 fi
