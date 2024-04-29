@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# Install and configure haproxy load balancer
+
+# check if haproxy is installed
+dpkg-query --show haproxy>/dev/null 2>&1
+if [ $? -eq 1 ]; then
+	sudo apt update -y
+	sudo apt ugrade -y
+	# enable a dedicated PPA with the following command:
+	sudo apt-get install --no-install-recommends software-properties-common
+	sudo add-apt-repository ppa:vbernat/haproxy-2.8
+
+	# install the latest release
+	sudo apt-get install haproxy=2.8.\* -y
+
+	# configure frontend and backend
+	sudo sed -i '$a\\nfrontend hbtn_lbl\n\tbind *:80\n\tmode http\n\tdefault_backend hbtn_lbl_backend\n\nbackend hbtn_lbl_backend\n\tbalance roundrobin\n\tserver web-01 100.25.150.143:80 check\n\tserver web-02 18.206.233.16:80 check\n' /etc/haproxy/haproxy.cfg
+
+	# restart haproxy service
+	sudo service haproxy restart
+else
+	echo "HAProxy already installed!"
+fi
