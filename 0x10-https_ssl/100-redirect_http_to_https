@@ -36,9 +36,7 @@ defaults
 frontend hbtn_lbl
 	bind *:80
 	bind *:443 ssl crt /etc/ssl/private/get4848_cert.perm
-	mode http
 	http-request redirect scheme https code 301 unless { ssl_fc }
-	option forwardfor
 	default_backend hbtn_lbl_backend
 
 backend hbtn_lbl_backend
