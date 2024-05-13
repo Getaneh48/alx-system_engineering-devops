@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# run a whoami command under the given user name
+
+if [[ $# -ne 1 ]]; then
+	echo "usage: command <username>"
+	exit 1
+fi
+
+username="$1"
+# run the command under the provided user
+sudo -u "$username" whoami
