@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# a bash script that run nginx master and it's child process as a non-root user
+
+USERNAME='nginx'
+if grep -q "^${USERNAME}:" /etc/passwd; then
+        echo "$USERNAME: exists"
+else
+        sudo adduser --system --no-create-home --shell /bin/false --group --disabled-login "$USERNAME"
+fi
+sudo service nginx stop
+
+# first remove the existed user directive
+sudo sed -i '/user www-data/d' /etc/nginx/nginx.conf
+sudo sed -i '/user nginx/d' /etc/nginx/nginx.conf
+# add the new user directive
+sudo sed -i "1 i\user $USERNAME;" /etc/nginx/nginx.conf
+sudo chown -R "$USERNAME":"$USERNAME" /etc/nginx
+sudo chown -R "$USERNAME":"$USERNAME" /var/log/nginx
+sudo chmod 644 /etc/nginx/nginx.conf
+sudo sed -i 's/ 80 default_server/ 8080 default_server/g' /etc/nginx/sites-available/default
+sudo sed -i 's/:80 default_server/:8080 default_server/g' /etc/nginx/sites-available/default
+sudo -u nginx nginx -c /etc/nginx/nginx.conf
