@@ -23,4 +23,4 @@ if __name__ == '__main__':
     t_task = len(todos)
     print(f"Employee {user['name']} is done with tasks({d_task}/{t_task})")
     for title in titles:
-        print(f"\t{title}")
+        print(f"\t {title}")
