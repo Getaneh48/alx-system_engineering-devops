@@ -14,13 +14,11 @@ if __name__ == '__main__':
     todos = requests.get(todos_url).json()
     user = requests.get(user_url).json()
 
-    done_tasks = 0
+    d_task = 0
     for todo in todos:
         if todo["completed"] is True:
-            done_tasks += 1
-    total_tasks = len(todos)
-
-    print(f"Employee {user['name']} is \
-            done with tasks({done_tasks}/{total_tasks})")
+            d_task += 1
+    t_task = len(todos)
+    print(f"Employee {user['name']} is done with tasks({d_task}/{t_task})")
     for todo in todos:
         print(f"\t{todo['title']}")
